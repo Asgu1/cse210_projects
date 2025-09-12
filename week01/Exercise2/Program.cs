@@ -28,7 +28,7 @@ class Program
         }
         else
         {
-            Console.WriteLine("You got a F");
+            Console.WriteLine("You got a F, better luck next time");
         }        
     }
 }
