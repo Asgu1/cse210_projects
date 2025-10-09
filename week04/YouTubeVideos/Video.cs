@@ -2,7 +2,7 @@ public class Video
 {
     private string _title = "";
     private string _author = "";
-    private int _lenght = 0;
+    private int _length = 0;
     private List<Comment> _comments = new List<Comment>();
 
     public Video()
@@ -10,11 +10,11 @@ public class Video
 
     }
 
-    public Video(string title, string author, string lenght)
+    public Video(string title, string author, int length)
     {
         _title = title;
         _author = author;
-        _lenght = lenght;
+        _length = length;
     }
 
     public string GetTitle()
@@ -35,13 +35,13 @@ public class Video
         _author = author;
     }
 
-    public string GetLenght()
+    public int GetLength()
     {
-        return _lenght;
+        return _length;
     }
-    public void SetLenght(string lenght)
+    public void SetLength(int length)
     {
-        _lenght = lenght;
+        _length = length;
     }
 
     public void NewComment(string author, string text)
@@ -60,8 +60,11 @@ public class Video
         int commentsNumbers = _comments.Count;
         Console.WriteLine($"Title: {_title}");
         Console.WriteLine($"Author: {_author}");
-        Console.WriteLine($"Lenght(seconds): {_lenght}");
+        Console.WriteLine($"Length(seconds): {_length}");
         Console.WriteLine($"Number of comments: {commentsNumbers}");
-        foreach
+        foreach (Comment comment in _comments)
+        {
+            Console.WriteLine($"  - {comment.GetAuthor()}: {comment.GetText()}");
+        }
     }
 }
